@@ -1,92 +1,104 @@
 <?php
 echo"<br>SEGITIGA SIKU KIRI<br>";
-$star=10;
-for($a=$star;$a>0;$a--){
-for($b=$star;$b>=$a;$b--){
-    echo "*";
+$MaxValue=10;
+for($a=1; $a<=$MaxValue; $a++) { //dari terkecil-terbesar: 1-x
+    for($b=1; $b<=$a; $b++) { //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1 & 2; dst..
+        //echo "*";
+        // echo $a.":".$b." ";
+        echo $b." ";
+    }
+    echo "<br>";
 }
-echo "<br>";
+echo"<br>SEGITIGA SIKU KIRI (REVERSE) V1 <br>";
+$MaxValue=10;
+for($a=$MaxValue; $a>=1; $a--) { //dari terbesar misal 1-x
+    for($b=$a; $b>=1; $b--) { //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1 & 2; dst..
+        // echo "*";
+        //  echo $a.":".$b." ";
+         echo $b." ";
+    }
+    echo "<br>";
 }
 
-echo"<br>SEGITIGA SIKU KIRI (REVERSE)<br>";
-$star=10;
-for($a=1; $a<=$star; $a++){
-for($c=$star; $c>=$a; $c-=1){
-    echo "*";
+echo"<br>SEGITIGA SIKU KIRI (REVERSE) V2 <br>";
+$MaxValue=10;
+for($a=1; $a<=$MaxValue; $a++) { //dari terbesar misal 1-x
+    for($b=$a; $b<=$MaxValue; $b++) { //Loop 1: a=1 => b:1,2,3..10; Loop 2: a=2 => b:2,3,4..10; dst..
+        // echo "*";
+        //  echo $a.":".$b." ";
+        echo $b." ";
+    }
+    echo "<br>";
 }
-echo "<br>";
+
+echo"<br>SEGITIGA SIKU KIRI (REVERSE) V3 <br>";
+$MaxValue=10;
+for($a=1; $a<=$MaxValue; $a++) { //dari terbesar misal 1-x
+    $tmp=1;
+    for($b=$a; $b<=$MaxValue; $b++) { //Loop 1: a=1 => b:1,2,3..10; Loop 2: a=2 => b:2,3,4..10; dst..
+        // echo "*";
+        echo $tmp." ";
+        $tmp++;
+    }
+    echo "<br>";
 }
 
 echo"<br>SEGITIGA SIKU KANAN<br>";
-$star=10;
-for($a=$star;$a>0;$a--){
-for($i=1; $i<=$a; $i++){
-    echo " &nbsp";
-}
-for($a1=$star;$a1>=$a;$a1--){
-    echo"*";
-}
-echo"<br>";
+$MaxValue=10;
+for($a=1; $a<=$MaxValue; $a++) { //dari terbesar misal 1-x
+    // create segitiga siku berisikan space "  &nbsp" 
+    for($b=$a; $b<=$MaxValue; $b++) { //Loop 1: a=1 => b:1,2,3..10; Loop 2: a=2 => b:2,3,4..10; dst..
+        echo " &nbsp";
+    }
+    // create segitiga siku berisikan *
+    for($b=1;$b<=$a;$b++){ //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1-2; dst..
+        echo"*";
+        // echo $b." ";
+    }
+    echo "<br>";
 }
 
 echo"<br>SEGITIGA SIKU KANAN (REVERSE)<br>";
-$star=10;
-for($a=1; $a<=$star; $a++){
-for($i=1; $i<=$a; $i++){
-    echo " &nbsp";
+$MaxValue=10;
+for($a=1; $a<=$MaxValue; $a++) { //dari terbesar misal 1-x
+    // create segitiga siku berisikan space "  &nbsp" 
+    for($b=1; $b<=$a; $b++) { //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1-2; dst..
+        echo " &nbsp";
+    }
+    // create segitiga siku berisikan *
+    for($b=$a;$b<=$MaxValue;$b++){ //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1-2; dst..
+        echo"*";
+        // echo $b." ";
+    }
+    echo "<br>";
 }
-for($c=$star; $c>=$a; $c-=1){
-    echo "*";
-}
-echo "<br>";
-}
-
 
 echo"<br>SEGITIGA SAMA KAKI<br>";
-$star=10;
-for( $a=$star;$a>0;$a--){
-for($i=1; $i<=$a; $i++){
-    echo "&nbsp";
-}
-for($a1=$star;$a1>=$a;$a1--){
-    echo"*";
-}
-echo"<br>";
+$MaxValue=10;
+for( $a=1;$a<=$MaxValue;$a++){
+    // Create segitiga sikut-left-reverse
+    for($i=$a; $i<=$MaxValue; $i++){ //Loop 1: a=1 => b:1,2,3..10; Loop 2: a=2 => b:2,3,4..10; dst..
+        echo "&nbsp";
+    }
+    for($a1=1;$a1<=$a;$a1++){ //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1,2; dst..
+        // echo"*";
+        echo $a1." ";
+    }
+    echo"<br>";
 }
 
 echo"<br>SEGITIGA SAMA KAKI (REVERSE)<br>";
-$star=10;
-for($a=1; $a<=$star; $a++){
-for($b=1; $b<=$a; $b++){
-    echo "&nbsp";
-}
-for($c=$star; $c>=$a; $c-=1){
-    echo "*";
-}
-echo "<br>";
-}
-
-
-
-echo"<br>DIAMON<br>";
-$star=10;
-for($a=1; $a<=$star; $a++){
-for($b=$star; $b>=$a; $b-=1){
-    echo "&nbsp";
-}
-for($c=1; $c<=$a; $c++){
-    echo "*";
-}
-echo "<br>";
-}
-for($a=1; $a<=$star; $a++){
-for($b=1; $b<=$a; $b++){
-    echo "&nbsp";
-}
-for($c=$star; $c>=$a; $c-=1){
-    echo "*";
-}
-echo "<br>";
+$MaxValue=10;
+for( $a=1;$a<=$MaxValue;$a++){
+    // Create segitiga sikut-left-reverse
+    for($b=1; $b<=$a; $b++){ //Loop 1: a=1 => b:1; Loop 2: a=2 => b:1,2; dst..
+        echo "&nbsp";
+    }
+    for($c=$a;$c<=$MaxValue;$c++){ //Loop 1: a=1 => b:1; Loop 2: a=2 => b:2,3; dst..
+        // echo"*";
+        echo $c." ";
+    }
+    echo"<br>";
 }
 
 ?>
